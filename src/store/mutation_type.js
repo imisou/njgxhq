@@ -1,0 +1,1 @@
+export const SET_SITE_LIST = "SET_SITE_LIST";

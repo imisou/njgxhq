@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, 'microsoft yahei', arial, STHeiTi, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 170px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: auto;
+    padding: 0;
+    background: none repeat scroll 0 0 #fff;
+}
+
+.crumbs {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.plugins-tips {
+    margin-bottom: 20px;
+    padding: 20px 10px;
+}
+
+.el-button + .el-tooltip {
+    margin-left: 10px;
+}
+
+.el-table td,
+.el-table th {
+    padding: 5px 18px;
+}
+
+.el-table tr:hover {
+    background: #f6faff;
+}
+
+.mgb20 {
+    margin-bottom: 20px;
+}
+
+.move-enter-active,
+.move-leave-active {
+    transition: opacity .5s;
+}
+
+.move-enter,
+.move-leave {
+    opacity: 0;
+}
+
+
+/*BaseForm*/
+
+.form-box {
+    width: 600px;
+}
+
+.form-box .line {
+    text-align: center;
+}
+
+.el-time-panel__content::after,
+.el-time-panel__content::before {
+    margin-top: -7px;
+}
+
+
+/*Readme*/
+
+.ms-doc .el-checkbox__input.is-disabled + .el-checkbox__label {
+    cursor: pointer;
+    color: #333;
+}
+
+
+/*Upload*/
+
+.pure-button {
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.g-core-image-corp-container .info-aside {
+    height: 45px;
+}
+
+.el-upload--text {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 360px;
+    height: 180px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.el-upload--text .el-icon-upload {
+    font-size: 67px;
+    line-height: 50px;
+    margin: 40px 0 16px;
+    color: #97a8be;
+}
+
+.el-upload--text {
+    font-size: 14px;
+    text-align: center;
+    color: #97a8be;
+}
+
+.el-upload--text em {
+    font-style: normal;
+}
+
+
+/*VueEditor*/
+
+.ql-container {
+    min-height: 400px;
+}
+
+.ql-snow .ql-tooltip {
+    transform: translateX(117.5px) translateY(10px) !important;
+}
+
+.editor-btn {
+    margin-top: 20px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-heading {
+    margin-bottom: 0;
+    padding: 20px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #f5f5f5;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+
+/* nav */
+
+.nav {
+    padding: 0;
+    list-style: none;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a.active {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.nav > li.disabled > a {
+    color: #999;
+}
+
+.nav > li.disabled > a:hover {
+    cursor: not-allowed;
+    text-decoration: none;
+    color: #999;
+    background-color: transparent;
+}
+
+.nav-hor {
+    padding: 0;
+    list-style: none;
+}
+
+.nav-hor > li {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-hor > li > a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.nav-hor > li > a:hover,
+.nav-hor > li > a.active {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.nav-hor > li.disabled > a {
+    color: #999;
+}
+
+.nav-hor > li.disabled > a:hover {
+    cursor: not-allowed;
+    text-decoration: none;
+    color: #999;
+    background-color: transparent;
+}
+
+.cf6 {
+    color: #f6f6f6;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}

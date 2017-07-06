@@ -1,0 +1,172 @@
+@backgroundColor: #1c1d24;
+
+@backgroundColorHover:#1e1f27;
+
+@fontColor : #737d83;
+@fontColorHover:#aebbd6;
+
+@Width:100%;
+
+@minWidth:50px;
+
+@Height:40px;
+
+.average(@x, @y) {
+  @subWidth: @x - @y;
+}
+
+.menu-extend{
+    position: relative;
+    display: inline-block;
+    width: @Width;
+    top: 0px;
+    height: 40px;
+    z-index: 123;
+    line-height: 40px;
+    left: 5px;
+}
+.m-menu {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    // bottom: 0;
+    // left: 0;
+    // width: @Width;
+    // background-color: #eee;
+    z-index: 100;
+    // &::before {
+    //     position: fixed;
+    //     top: 60px;
+    //     bottom: 0;
+    //     width: @Width;
+    //     background-color: @backgroundColor;
+    //     content: "";
+    //     z-index: 1;
+    // }
+    .wrapper-menu {
+        // padding-left: 5px;
+        display: block;
+        box-sizing: border-box;
+    }
+    .m-menuitem__a {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        height: 40px;
+        width: 100%;
+        line-height: 30px;
+        padding: 5px 10px;
+        z-index: 123;
+        color: @fontColor;
+        overflow: hidden;
+        i.leftbar-menu__icon {
+            display: inline-block;
+            min-width: 24px;
+            position: relative;
+            top: 4px;
+        }
+        &:hover {
+            background-color: @backgroundColorHover;
+            color: @fontColorHover;
+            cursor: pointer;
+        }
+        &.is-active::before {
+            position: absolute;
+            left: -4px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #2dc3e8;
+            content: "";
+        }
+        &:hover::before {
+            position: absolute;
+            left: -4px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: red;
+            content: "";
+        }
+    }
+    .m-menuitem {}
+    .m-submenu {
+        position: relative;
+        //打开时 下拉样式
+        &.is-open>.m-submenu__a>.icon-xiala {
+            transform: rotate(0deg);
+        }
+        .m-submenu__a {
+            position: relative;
+            display: block;
+            height: 40px;
+            line-height: 30px;
+            padding: 5px 10px;
+            z-index: 123;
+            box-shadow: 1px 0 1px rgba(255, 255, 255, 1);
+            i.icon-xiala {
+                position: absolute;
+                top: 13px;
+                right: 5px;
+                display: inline-block;
+                height: 14px;
+                line-height: 14px;
+                width: 14px;
+                min-width: 14px;
+                transform:rotate(-90deg);
+                transform-origin:center center;
+                transition: all 300ms ease-in-out;
+            }
+        }
+        .m-submenu__ul {
+            display: block;
+            background-color: #fbfbfb;
+            box-shadow: inset 0 4px 4px -2px rgba(0, 0, 0, .15), inset 0 -4px 4px -2px rgba(0, 0, 0, .15);
+            &::before {
+                position: absolute;
+                top: 40px;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #fbfbfb;
+                content: "";
+                z-index: 1;
+            }
+            .m-menuitem__a {
+                padding-left: 40px;
+            }
+        }
+    }
+    a {
+        z-index: 123;
+    }
+}
+
+
+.m-menu.is-mini{
+    position: fixed;
+    top: 60px;
+    width: 50px;
+
+    // overflow: hidden;
+
+    .m-submenu__ul{
+        .average(@Width,@minWidth);
+        position: absolute;
+        top: 0;
+        left: @minWidth;
+        width: @subWidth;
+        z-index: 1000;
+    }
+
+    .m-submenu__a{
+        transition:all 1s;
+        transform: scale()
+    }
+}
+.collapse-transition {
+    transition: 1s height ease-in-out, .3s padding-top ease-in-out, .3s padding-bottom ease-in-out
+}
+
+

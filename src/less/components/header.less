@@ -1,0 +1,84 @@
+@import url("../help/variables.less");
+.yz-header {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: @HeaderHeight;
+    font-size: 22px;
+    color: #000;
+    line-height: @HeaderHeight;
+    background-color: @HeaderBackgroundC;
+    box-shadow:  2px 0 2px #eee;
+    li>.header-a {
+        padding: 5px 15px;
+        line-height: 40px;
+    }
+    li>.header-a:hover {
+        background-color: transparent;
+        color: #999;
+    }
+    .logo {
+        float: left;
+        width: 130px;
+        text-align: center;
+        padding: 5px 10px;
+        line-height: 40px;
+    }
+    .user-info {
+        padding-right: 50px;
+        font-size: 16px;
+        color: #000;
+        line-height: 50px;
+
+        .user-info__link{
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .user-info__img{
+            position: absolute;
+            height: 50px;
+            padding: 5px 0;
+            display: inline-block;
+            .user-logo{
+                position: relative;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
+        }
+
+    }
+    .user-info .el-dropdown-link {
+        position: relative;
+        display: inline-block;
+        padding-left: 10px;
+        color: #000;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+   
+    
+}
+.el-dropdown-menu::before {
+        position: absolute;
+        top: -12px;
+        left: 20px;
+        width: 5px;
+        height: 5px;
+        border-width: 10px;
+        border-color: #ffffff;
+        border-top-width: 0;
+        border-bottom-color: #ffffff;
+        border-style: dashed;
+        border-bottom-style: solid;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        content: "";
+    }
+    .el-dropdown-menu__item {
+        text-align: left;
+        line-height: 30px;
+    }
+    .el-dropdown-menu__item i {
+        padding: 0 10px 0 5px;
+    }
