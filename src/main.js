@@ -7,8 +7,6 @@ import router from './router';
 //vuex配置文件
 import store from "./store"
 
-import axios from 'axios';
-
 //elementUI
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-default/index.css'; // 默认主题
@@ -52,35 +50,16 @@ var clickoutside = Vue.directive('clickoutside', {
         document.removeEventListener('click', el.__vueClickOutside__);
         delete el.__vueClickOutside__;
     }
-})
-
-//axios 基本配置
-let $http = axios.create({
-    baseURL: 'http://localhost:8080',
-
-})
-
-$http.interceptors.request.use(function(config) {
-    // 在发送请求之前做些什么
-    console.log('请求数据',config)
-    return config;
-}, function(error) {
-    // 对请求错误做些什么
-    return Promise.reject(error);
 });
 
-// 添加响应拦截器
-$http.interceptors.response.use(function(response) {
-    // 对响应数据做点什么
-    return response;
-}, function(error) {
-    // 对响应错误做点什么
-    return Promise.reject(error);
-});
-
+/*
+    axios 的配置
+ */
+import { $http, $fetch } from "./util/axios.js";
+console.log($http);
 Vue.prototype.$http = $http;
+Vue.prototype.$fetch = $fetch;
 
-import Mock from "./mock";
 
 new Vue({
     router,

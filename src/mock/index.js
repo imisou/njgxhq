@@ -19,6 +19,8 @@ var mock = new MockAdapter(axios);
 // 模拟任意GET请求到 /users 
 //reply的参数为 (status, data, headers) 
 mock.onPost('/get_sites.do').reply(200, {
+    respCode:"0",
+    respMsg:"success",
     result: [
         {
             id:1,

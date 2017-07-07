@@ -12,6 +12,17 @@ export default {
     },
 
     siteList:(state) =>{
+        
         return state.siteData;
+    
+    },
+
+    currentSite:(state)=>{
+        
+        return state.currentSite;
+    },
+
+    getLeftbarType: (state)=>{
+        return state.leftbar.type;
     }
 }

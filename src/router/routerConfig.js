@@ -13,7 +13,7 @@ const router = new Router({
         component: resolve => require(['../pages/index.vue'], resolve),
         redirect:"/welcome",
         children: [{
-                path: '/welcome',
+                path: '/welcome/:id',
                 component: resolve => require(['../pages/home/welcome.vue'], resolve) //欢迎页面
             }, {
                 path: '/doctor',

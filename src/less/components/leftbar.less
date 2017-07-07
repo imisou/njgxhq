@@ -1,12 +1,51 @@
 @import url("../help/variables.less");
+.wrapper-leftbar {
+    position: absolute;
+    float: left;
+    display: inline-block;
+    width: @leftBarWidth;
+    height: 100%;
+    // transition: width .3s;
+    // float: left;
+    // margin-right: -100%;
+}
 
-.m-leftbar{
+.wrapper-home.is-mini {
+    .wrapper-body {
+        padding-left:  @leftBarWidthMini !important;
+        // transition:padding .5s;
+    }
+    .m-footer{
+        left:  @leftBarWidthMini !important;
+    }
+}
+
+.wrapper-leftbar.is-mini {
+    width: @leftBarWidthMini;
+    .leftbar-menu__icon {
+        display: inline-block;
+        width: 50px;
+        position: relative;
+        top: -5px !important;
+        left: -10px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .m-submenu__ul {
+        position: absolute;
+        left: @leftBarWidthMini;
+        top: 0px;
+    }
+}
+
+.m-leftbar {
     position: relative;
     display: inline-block;
     height: 100%;
     width: 100%;
-
-    &::before{
+    &::before {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -15,24 +54,27 @@
         background-color: @leftbarBackgroundC;
         content: "";
     }
-
-
-    .leftbar-header{
+    .leftbar-header {
         position: relative;
         display: inline-block;
         width: 100%;
         height: @HeaderHeight;
         line-height: @HeaderHeight;
-        padding: 0px 10px;
+        padding: 0px 0px;
         box-sizing: border-box;
-        li{
-            position: relative;
-            display: inline-block;
-        }
-        .leftbar-header__a{
+        color: @leftbarColor;
+        overflow: hidden;
+        // li{
+        //     position: relative;
+        //     display: inline-block;
+        // }
+        .leftbar-header__a {
             display: inline-block;
             padding: 5px 10px;
             line-height: 40px;
+            color: #c4d0d9 !important;
+            font-size: 20px;
         }
     }
+    .leftbar_logo.leftbar_logo {}
 }
