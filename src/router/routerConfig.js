@@ -13,41 +13,33 @@ const router = new Router({
         component: resolve => require(['../pages/index.vue'], resolve),
         redirect:"/welcome",
         children: [{
-                path: '/welcome/:id',
-                component: resolve => require(['../pages/home/welcome.vue'], resolve) //欢迎页面
+                path: '/welcome',//欢迎页面
+                component: resolve => require(['../pages/home/welcome.vue'], resolve)
             }, {
-                path: '/doctor',
-                component: resolve => require(['../pages/DoctorManagePage.vue'], resolve)
+                path: '/site',  //站点管理
+                component: resolve => require(['../pages/home/siteManagePage.vue'], resolve)
+            },{
+                path: '/column',// 栏目管理
+                component: resolve => require(['../pages/home/ColumnManagePage.vue'], resolve)
+            }, {
+                path: '/article',// 文章管理
+                component: resolve => require(['../pages/home/ArticleManagePage.vue'], resolve),
+                
+            }, {
+                path: '/operator',//用户管理
+                component: resolve => require(['../pages/OperatorManagePage.vue'], resolve)
+            }, {
+                path: "/priv",// 权限管理
+                component: resolve => require(['../pages/home/PrivManagePage.vue'], resolve)
+            }, {
+                path: "/role",// 角色管理
+                component: resolve => require(['../pages/home/roleManagePage.vue'], resolve)
+            },{
+                path: '/upload',
+                component: resolve => require(['../components/page/Upload.vue'], resolve) //
             }, {
                 path: '/log',
                 component: resolve => require(['../pages/LogManagePage.vue'], resolve)
-            }, {
-                path: '/operator',
-                component: resolve => require(['../pages/OperatorManagePage.vue'], resolve)
-            }, {
-                path: '/department',
-                component: resolve => require(['../pages/DepartmentManagePage.vue'], resolve)
-            }, {
-                path: '/system',
-                component: resolve => require(['../pages/SystemManagePage.vue'], resolve)
-            }, {
-                path: '/upload',
-                component: resolve => require(['../components/page/Upload.vue'], resolve) // 
-            }, {
-                path: '/news',
-                component: resolve => require(['../pages/NewsPage.vue'], resolve) // 栏目管理
-            }, {
-                path: '/building',
-                component: resolve => require(['../pages/floorManagePage.vue'], resolve) // 楼层管理
-            }, {
-                path: '/symptom',
-                component: resolve => require(['../pages/symptomPage.vue'], resolve) // 症状管理
-            }, {
-                path: "/priv",
-                component: resolve => require(['../pages/PrivManagePage.vue'], resolve) // 权限管理
-            }, {
-                path: "/role",
-                component: resolve => require(['../pages/roleManagePage.vue'], resolve) // 权限管理
             }
 
         ]

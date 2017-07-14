@@ -9,8 +9,8 @@ module.exports = {
     build: {
         //env: require('./prod.env'),
         env:arr[process.env.NODE_ENV],
-        index: path.resolve(__dirname, '../../trunk/hospital-console/src/main/webapp/index.html'),
-        assetsRoot: path.resolve(__dirname, '../../trunk/hospital-console/src/main/webapp'),
+        index: path.resolve(__dirname, '../../trunk/jsghx-console/src/main/webapp/index.html'),
+        assetsRoot: path.resolve(__dirname, '../../trunk/jsghx-console/src/main/webapp'),
         assetsSubDirectory: 'static',
         assetsPublicPath: './',
         productionSourceMap: false,
@@ -28,8 +28,8 @@ module.exports = {
     },
     build_xiansheng: {
         env: require('./xiansheng.env'),
-        index: path.resolve(__dirname, '../../trunk/hospital-console/src/main/webapp/index.html'),
-        assetsRoot: path.resolve(__dirname, '../../trunk/hospital-console/src/main/webapp'),
+        index: path.resolve(__dirname, '../../trunk/jsghx-console/src/main/webapp/index.html'),
+        assetsRoot: path.resolve(__dirname, '../../trunk/jsghx-console/src/main/webapp'),
         assetsSubDirectory: 'static',
         assetsPublicPath: './',
         productionSourceMap: false,
@@ -52,13 +52,13 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            /*'/api':{
-                target:'http://jsonplaceholder.typicode.com',
+            '/api':{
+                target:'http://localhost:8080/jsghx-console',
                 changeOrigin:true,
                 pathRewrite:{
-                    '/api':''
+                    '/api':'/'
                 }
-            }*/
+            }
         },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README

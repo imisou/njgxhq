@@ -10,15 +10,16 @@ Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
-import header from "./modules/header.js"
-
+import header from "./modules/header.js";
+import article from "./modules/article.js";
 export default new Vuex.Store({
     state,
     getters,
     mutations,
     actions,
     modules:{
-        header
+        header,
+        article
     },
     strict: debug
 })

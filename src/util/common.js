@@ -5,6 +5,6 @@ console.log('process.env.NODE_ENV',process.env);
 const { user,main,consoleapi } = process.env;
 
 
-export const userApi = user;
-export const mainApi = main;
-export const consoleApi = consoleapi;
+
+export const consoleApi = "http://localhost:8080/jsghx-console";
+export const mainApi = "http://localhost:8080/jsghx-console";

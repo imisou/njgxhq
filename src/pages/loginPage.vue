@@ -33,6 +33,9 @@
 </template>
 <script>
 import * as util from '../util/common.js'
+
+import * as types from "../store/mutation_type.js"
+
 export default {
     data: function() {
         return {
@@ -57,43 +60,47 @@ export default {
     methods: {
         submitForm(formName) {
             const self = this;
-            var obj={
-                userName:self.ruleForm.username,
-                userPasswd:self.ruleForm.password
+            var obj = {
+                userName: self.ruleForm.username,
+                userPasswd: self.ruleForm.password
             };
 
             var loginSubmit = function() {
-               $.ajax({
-                    url: util.userApi + "/user/login_pc_process.do",
-                    type: "post",
-                    dataType: "json",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                    data: JSON.stringify(obj),
-                    
-                    success: function(loginResp) {
-                        console.log(loginResp);
 
-                        if(loginResp.respCode != '0'){
-                            self.$message({
-                                message:loginResp.respMsg,
-                                type:"error"
-                            })
-                        }else{
-                            self.$router.push('/log');
-                        }
-                    },
-                    error: function() {
-                        console.log("加载错误!");
+                self.$http({
+                    url: "/user/login_pc.do",
+                    method: "post",
+                    data: obj
+                }).then(loginResp => {
+
+                    if (loginResp.data.respCode != '0') {
+                        self.$message({
+                            message: loginResp.data.respMsg,
+                            type: "error"
+                        });
+                    } else {
+
+                        self.$fetch('/user/select_by_user.do').then(resp => {
+                            if(resp.respCode != '0'){
+                                self.$message({
+                                    message: resp.respMsg,
+                                    type: "error"
+                                });
+                                return;
+                            }
+                            self.$store.commit(types.SET_SITE_LIST,resp.result);
+                            self.$store.commit(types.SET_HEADER_CURRENTSITE,resp.result[0]);
+                            self.$router.push({ path: '/welcome', query: { siteId: resp.result[0].siteId }});
+                            
+                        })
+                        
                     }
-                })
+                });
+
             }
             self.$refs[formName].validate((valid) => {
                 if (valid) {
-                    /*localStorage.setItem('ms_username', self.ruleForm.username);
-                    self.$router.push('/log');*/
+                    
                     loginSubmit();
                 } else {
                     console.log('error submit!!');

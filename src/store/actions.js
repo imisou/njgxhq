@@ -3,9 +3,7 @@ import  {$http,$fetch} from "../util/axios.js"
 
 export default {
     setSite: function({ commit },siteId) {
-        $fetch('/get_sites.do').then(resp => {
-            console.log("结果是：", resp.result);
-
+        $fetch('/user/select_by_user.do').then(resp => {
             if(resp.respCode !== "0"){
                 commit(types.SET_SITE_LIST,[]);
                 return;
@@ -20,6 +18,8 @@ export default {
                         commit(types.SET_HEADER_CURRENTSITE,elem);
                     }
                 })
+            }else{
+                commit(types.SET_HEADER_CURRENTSITE,resp.result[0]);
             }
         })
     }

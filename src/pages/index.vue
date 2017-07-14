@@ -3,8 +3,11 @@
         <yz-leftbar></yz-leftbar>
         <div class="wrapper-body">
             <yz-header></yz-header>
-            <router-view></router-view>
-            <yz-footer></yz-footer>
+            <div class="wrapper-container">
+                <router-view></router-view>
+                <yz-footer></yz-footer>
+            </div>
+            
         </div>
     </div>
 </template>

@@ -42,6 +42,7 @@ export default {
     },
     created: function() {
         console.log(this.rootMenu);
+        console.log(this.$route);
     },
     methods: {
         handleClick: function() {
